@@ -124,8 +124,6 @@ def entry(
         print(ConfigManager().get_cli_version())
         ctx.exit(0)
 
-    workspace_manager.setup_workspace_manager(workspace, here, recent, skip_prompt)
-
     tracking.prompt_tracking_consent(skip_prompt, default_value=enable_telemetry)
 
     if ctx.invoked_subcommand is None:
@@ -136,6 +134,7 @@ def entry(
         ctx.exit()
 
     # TODO: Move this to proper place
+    # workspace_manager.setup_workspace_manager(workspace, here, recent, skip_prompt)
     # start_time = time.time()
     # workspace_manager.scan_dir()
     # end_time = time.time()
